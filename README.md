@@ -49,8 +49,6 @@ Actividad5/
 │       ├── dashboard_runs.png
 │       ├── metric_comparison.png
 │       └── artifacts_logged.png
-├── mlartifacts/             # Almacenamiento local de artefactos de MLflow (modelos y gráficos)
-├── mlflow.db                # Base de datos SQLite para el backend de MLflow
 ├── README.md                # Guía de reproducción local y arquitectura
 └── CHANGELOG.md             # Reporte técnico final y registro de versiones (T11/T12)
 ```
