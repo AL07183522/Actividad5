@@ -81,11 +81,7 @@ Partición estratificada 75/25 y **5-Fold Stratified Cross-Validation** en `Grid
 
 ### 6.2 Evidencias Visuales de MLflow en el Repositorio
 Las capturas de pantalla de la interfaz web y el servidor local de MLflow están alojadas en la carpeta dedicada del repositorio:  
-👉 **Ruta de Evidencias en GitHub:** `https://github.com/AL07183522/Actividad5/tree/main/imagenes/evidenciaMLFLOW`
-
-* **`dashboard_runs.png`:** Muestra la vista general del servidor MLflow con las corridas del experimento `"Breast_Cancer_Classification_Act5"`.
-* **`metric_comparison.png`:** Muestra la comparación gráfica de F1-Score, ROC-AUC y Accuracy entre Regresión Logística y Random Forest.
-* **`artifacts_logged.png`:** Muestra los artefactos guardados en `mlartifacts/`, incluyendo los binarios `.pkl` y las matrices de confusión.
+**Ruta de Evidencias en GitHub:** `https://github.com/AL07183522/Actividad5/tree/main/imagenes/evidenciaMLFLOW`
 
 ---
 
