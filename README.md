@@ -29,7 +29,6 @@ El conjunto de datos utilizado es el **Breast Cancer Wisconsin (Diagnostic) Data
 ## 📁 3. Estructura Completa del Repositorio (`/Users/manu/Documents/Actividad5`)
 ```
 Actividad5/
-├── .venv/                   # Entorno virtual de Python
 ├── datos/
 │   ├── datos_ini/           # Dataset crudo original con duplicados (breast_cancer_raw.csv)
 │   └── datos_limp/          # Dataset limpio y estandarizado Z-Score (breast_cancer_clean.csv)
@@ -38,19 +37,16 @@ Actividad5/
 │   ├── generar_graficas.py  # Generación automática de visualizaciones EDA y métricas
 │   ├── train.py             # Entrenamiento, GridSearchCV, 5-Fold Stratified CV y MLflow Tracking
 │   └── entrena.ipynb        # Notebook interactivo para pruebas y Google Colab
-├── imagenes/
+├── imagenes/                #Graficas de desempeño del los modelos
 │   ├── distribucion_clases.png
 │   ├── matriz_correlacion.png
 │   ├── matriz_confusion_lr.png
 │   ├── matriz_confusion_rf.png
 │   ├── curva_roc_comparativa.png
 │   ├── feature_importance.png
-│   └── evidenciaMLFLOW/     # Evidencias visuales de la interfaz y ejecuciones en MLflow
-│       ├── dashboard_runs.png
-│       ├── metric_comparison.png
-│       └── artifacts_logged.png
+│   └── evidenciaMLFLOW/     # Evidencias en capturas de pantallas de la ejecuciones en MLflow
 ├── README.md                # Guía de reproducción local y arquitectura
-└── CHANGELOG.md             # Reporte técnico final y registro de versiones (T11/T12)
+└── CHANGELOG.md             # Reporte técnico
 ```
 ---
 
