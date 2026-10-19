@@ -1,0 +1,10 @@
+# Entorno y cachés de Python
+.venv/
+__pycache__/
+*.py[cod]
+.DS_Store
+
+# Datos locales de MLflow
+*.db
+mlruns/
+mlartifacts/

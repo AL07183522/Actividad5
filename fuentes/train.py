@@ -32,6 +32,10 @@ from datos_prep import ejecutar_pipeline_preprocesamiento
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PATH_LIMPIO = os.path.join(BASE_DIR, "datos", "datos_limp", "breast_cancer_clean.csv")
+MLFLOW_TRACKING_URI = os.getenv(
+    "MLFLOW_TRACKING_URI",
+    f"sqlite:///{os.path.join(BASE_DIR, 'mlflow.db')}"
+)
 
 def cargar_o_preparar_dataset() -> pd.DataFrame:
     """Garantiza la disponibilidad del dataset limpio antes del entrenamiento."""
@@ -57,7 +61,9 @@ def entrenar_y_registrar():
     cv = StratifiedKFold(n_splits=5, shuffle=True, random_state=42)
 
     if HAS_MLFLOW:
+        mlflow.set_tracking_uri(MLFLOW_TRACKING_URI)
         mlflow.set_experiment("Breast_Cancer_Classification_Act5")
+        print(f"[INFO] MLflow activo. Tracking URI: {MLFLOW_TRACKING_URI}")
 
     # ----------------------------------------------------
     # PIPELINE 1: REGRESIÓN LOGÍSTICA
@@ -78,6 +84,8 @@ def entrenar_y_registrar():
     
     if HAS_MLFLOW:
         with mlflow.start_run(run_name="Logistic_Regression_GridSearch"):
+            mlflow.set_tags({"model": "logistic_regression", "dataset": "breast_cancer"})
+            mlflow.log_param("cv_folds", cv.n_splits)
             mlflow.log_params(grid_lr.best_params_)
             mlflow.log_metrics({
                 "accuracy": acc_lr, 
@@ -86,7 +94,11 @@ def entrenar_y_registrar():
                 "f1_score": f1_lr, 
                 "roc_auc": auc_lr
             })
-            mlflow.sklearn.log_model(best_lr, "model_logistic_regression")
+            mlflow.sklearn.log_model(
+                best_lr,
+                name="model_logistic_regression",
+                serialization_format="pickle"
+            )
             
     print(f"[LR] Regresión Logística -> Accuracy: {acc_lr:.4f}, Precision: {prec_lr:.4f}, Recall: {rec_lr:.4f}, F1: {f1_lr:.4f}, ROC-AUC: {auc_lr:.4f}")
 
@@ -113,6 +125,8 @@ def entrenar_y_registrar():
     
     if HAS_MLFLOW:
         with mlflow.start_run(run_name="Random_Forest_GridSearch"):
+            mlflow.set_tags({"model": "random_forest", "dataset": "breast_cancer"})
+            mlflow.log_param("cv_folds", cv.n_splits)
             mlflow.log_params(grid_rf.best_params_)
             mlflow.log_metrics({
                 "accuracy": acc_rf, 
@@ -121,7 +135,11 @@ def entrenar_y_registrar():
                 "f1_score": f1_rf, 
                 "roc_auc": auc_rf
             })
-            mlflow.sklearn.log_model(best_rf, "model_random_forest")
+            mlflow.sklearn.log_model(
+                best_rf,
+                name="model_random_forest",
+                serialization_format="pickle"
+            )
             
     print(f"[RF] Random Forest Classifier -> Accuracy: {acc_rf:.4f}, Precision: {prec_rf:.4f}, Recall: {rec_rf:.4f}, F1: {f1_rf:.4f}, ROC-AUC: {auc_rf:.4f}")
 
