@@ -1,4 +1,3 @@
-```markdown
 # Actividad 5: Gestión de Datos, Entrenamiento y Tracking MLOps con MLflow
 
 **Materia:** Gestión de Proyectos de Inteligencia Artificial  
@@ -122,8 +121,5 @@ Se evaluaron dos algoritmos con hiperparámetros optimizados mediante `GridSearc
 * **Versionamiento de Datos (T11):** Documentación continua registrada en `CHANGELOG.md` desde la versión cruda `v0.1.0` hasta la versión limpia `v1.0.0`.
 * **Seguimiento con MLflow (T12):** Almacenamiento estructurado de hiperparámetros, métricas en test y artefactos serializados (`model_logistic_regression`, `model_random_forest`).
 * **Gestión de Deuda Técnica:** Arquitectura modularizada en Python que mitiga el sesgo por *Data Drift* y facilita la re-inicialización periódica de pipelines de entrenamiento.
-```
-
----
 
 🔍 ¿Deseas que agreguemos alguna sección adicional o ajustar algún enlace antes de subirlo a GitHub?
