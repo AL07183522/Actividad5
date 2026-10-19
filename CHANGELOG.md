@@ -1,4 +1,3 @@
-```markdown
 # Reporte Técnico Final y Registro de Cambios (CHANGELOG.md)
 
 **Materia:** Gestión de Proyectos de Inteligencia Artificial  
@@ -106,6 +105,3 @@ Se configuró el seguimiento automático en MLflow bajo el experimento `"Breast_
 
 1. **Gestión de Data Drift & Concept Drift:** En producción médica, la evolución de equipos de mamografía puede cambiar las distribuciones de entrada. Se propone integrar monitoreos periódicos de la prueba Kolmogorov-Smirnov sobre datos entrantes.
 2. **Automatización de CI/CD para ML:** La separación modular realizada entre `datos_prep.py` y `train.py` permite orquestar ejecuciones automáticas en GitHub Actions o Apache Airflow ante cada actualización del dataset en `datos/datos_ini/`.
-```
-
----
