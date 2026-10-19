@@ -10,7 +10,7 @@ Docente: Luis Ariel Vazquez Piña
 
 ## 📌 1. Descripción General del Proyecto
 
-Este repositorio contiene la solución técnica integral para la **Actividad 5**, enfocado en el desarrollo de un pipeline MLOps completo de aprendizaje automático supervisado en entorno local. El proyecto abarca desde la ingesta automática y preprocesamiento de datos hasta el entrenamiento de modelos clasificadores, optimización de hiperparámetros mediante `GridSearchCV` con validación cruzada estratificada (`5-Fold Stratified K-Fold`) y el seguimiento sistemático de experimentos con un servidor local de **MLflow** respaldado por **SQLite** y almacenamiento local de artefactos.
+Este repositorio contiene la solución para la **Actividad 5** que se  enfoca en el desarrollo de un pipeline MLOPS utilizando la plataforma opensource de MLFlow en entorno local. El proyecto abarca desde la ingesta automática y preprocesamiento de datos hasta el entrenamiento de modelos clasificadores, optimización de hiperparámetros mediante `GridSearchCV` con validación cruzada estratificada (`5-Fold Stratified K-Fold`).
 
 ---
 
@@ -57,8 +57,6 @@ Actividad5/
 ## 🚀 4. Guía de Ejecución Local Paso a Paso
 
 ### Paso 1: Configurar el Entorno Virtual e Instalar Dependencias
-cd /Users/manu/Documents/Actividad5
-
 python3 -m venv .venv
 source .venv/bin/activate
 pip install pandas numpy scikit-learn matplotlib seaborn mlflow
@@ -66,12 +64,11 @@ pip install pandas numpy scikit-learn matplotlib seaborn mlflow
 ---
 
 ### Paso 2: Iniciar el Servidor Local de MLflow (Terminal 1)
-.venv/bin/mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root /Users/manu/Documents/Actividad5/mlartifacts --host 127.0.0.1 --port 5000
+.venv/bin/mlflow server --backend-store-uri sqlite:///mlflow.db --default-artifact-root /Actividad5/mlartifacts --host 127.0.0.1 --port 5000
 
 ---
 
 ### Paso 3: Ejecutar los Pipelines y Registrar Experimentos (Terminal 2)
-cd /Users/manu/Documents/Actividad5
 source .venv/bin/activate
 
 python fuentes/datos_prep.py
@@ -96,4 +93,4 @@ python fuentes/train.py
 ## 📷 6. Evidencias de MLflow en el Repositorio
 
 Las capturas de pantalla que respaldan la ejecución del servidor local y el registro de experimentos se encuentran disponibles en la carpeta:  
-👉 `imagenes/evidenciaMLFLOW/` dentro del repositorio en GitHub (`https://github.com/AL07183522/Actividad5/tree/main/imagenes/evidenciaMLFLOW`).
+ `imagenes/evidenciaMLFLOW/` dentro del repositorio en GitHub (`https://github.com/AL07183522/Actividad5/tree/main/imagenes/evidenciaMLFLOW`).
