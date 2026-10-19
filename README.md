@@ -27,7 +27,7 @@ El conjunto de datos utilizado es el **Breast Cancer Wisconsin (Diagnostic) Data
 ---
 
 ## 📁 3. Estructura Completa del Repositorio (`/Users/manu/Documents/Actividad5`)
-
+```
 Actividad5/
 ├── .venv/                   # Entorno virtual de Python
 ├── datos/
@@ -53,7 +53,7 @@ Actividad5/
 ├── mlflow.db                # Base de datos SQLite para el backend de MLflow
 ├── README.md                # Guía de reproducción local y arquitectura
 └── CHANGELOG.md             # Reporte técnico final y registro de versiones (T11/T12)
-
+```
 ---
 
 ## 🚀 4. Guía de Ejecución Local Paso a Paso
