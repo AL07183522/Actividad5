@@ -1,10 +1,16 @@
-# Reporte Técnico Final y Registro de Cambios (CHANGELOG.md)
+# Reporte Técnico
 
 Materia: Gestión de Proyectos de Inteligencia Artificial  
 Actividad: 5  
-Alumno(a): Manuel de Jesus Ramiro Velázquez Tapia  
+Alumno: Manuel de Jesus Ramiro Velázquez Tapia  
 Matrícula: AL07183522  
 Docente: Luis Ariel Vazquez Piña  
+
+---
+
+### Declaración del uso de herramientas de inteligencia artificial
+* **Herramientas:** MLFLOW, Gemini, Google Colab, VS Code con copilot.
+* **Propósito:** Integracion en servidor local de MLOPS en MLFLOW, generacion del README y CHANGELOG para el reporte, ayuda en codificacion y cprreccion de herrores para instalar y configurar MLFLOW
 
 ---
 
@@ -83,7 +89,8 @@ Las capturas de pantalla de la interfaz web y el servidor local de MLflow están
 
 ---
 
-## 💡 7. Reflexión sobre Deuda Técnica y Filosofía MLOps
+## 💡 7. Reflexión
 
-1. **Gestión de Data Drift & Concept Drift:** Implementación de pruebas Kolmogorov-Smirnov sobre datos entrantes.
-2. **Automatización de CI/CD:** Desacoplamiento modular entre `datos_prep.py` y `train.py` listo para integración continua con GitHub Actions.
+El uso de una plataforma open source como MLFLOW nos facilita mucho la implementacion de MLOPS en local, y dicha implementacion se puede realizar en minutos una vez que se le entiende.
+Otrta venjata es que para integrarla en nuestros scripts de python requiere solamente 5 lineas a lo mucho para que el servidor pueda tomarlo y registarlo.
+Finalmente al utilizar la arquitectura modular que se sugiere en la tarea, faci,mente podemos hacer integracion continua en github actions o en local, ya solo en local nos toca tener un equipo minimo que aguante el entrenamineto y validacion de nuestros modelos.
